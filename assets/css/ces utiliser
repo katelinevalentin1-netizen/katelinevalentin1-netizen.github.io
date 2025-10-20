@@ -1,0 +1,21 @@
+/* Thème rapide */
+:root{ --color-bg:#f6ede4; --color-accent:#2e5247; --color-text:#1c2833; }
+
+body{
+  background: var(--color-bg) url("../images/bg-van-gogh.jpg") center/cover fixed no-repeat;
+  color: var(--color-text);
+}
+body::before{ content:""; position:fixed; inset:0; background:rgba(246,237,228,.75); backdrop-filter:blur(3px); z-index:-1; }
+
+h1,h2,h3,h4{ color:var(--color-accent); }
+a{ color:var(--color-accent); } a:hover{ color:#204138; }
+
+#header{ background:rgba(46,82,71,.9); color:#fff; }
+#header .image.avatar img{ width:130px; height:130px; object-fit:cover; border-radius:50%; border:3px solid #f6ede4; }
+
+.button.primary{ background:var(--color-accent); color:#fff!important; border:none; border-radius:32px; padding:.9em 1.6em; font-weight:600; }
+.button.primary:hover{ filter:brightness(.95); transform:scale(1.05); }
+
+#footer{ background:rgba(30,50,46,.9); color:#f6ede4; } 
+#footer a{ color:#f6ede4; }
+
