@@ -3527,3 +3527,40 @@ hr, .box, table th, table td {
   background: #fff;
   color: var(--color-accent) !important;
 }
+
+/* =======================================================
+   💙 Ajustements visuels Kateline — Bleu roi & Vert sapin
+   ======================================================= */
+
+/* 🎨 Icônes sur fond blanc → bleu ciel */
+ul.feature-icons li:before {
+  background: #87CEFA !important; /* Bleu ciel */
+  color: #ffffff !important;
+}
+
+/* 🎨 Icônes sur fond vert → blanc (menu latéral, footer) */
+#header ul.icons li a,
+#footer ul.icons li a {
+  color: #ffffff !important;
+}
+
+/* ✨ Lignes de séparation sur fond vert → blanches */
+#header > nav ul li {
+  border-top: 1px solid rgba(255, 255, 255, 0.6) !important;
+}
+
+/* ✨ Lignes de contour du menu ou des blocs sur fond vert */
+#header > nav ul li a {
+  border-color: #ffffff !important;
+}
+
+/* 🔵 Titre de section bleu roi et icônes coordonnées */
+h2, h3, h4 {
+  color: #2A4FA8 !important; /* Bleu roi principal */
+}
+
+/* 💫 Lien actif du menu → fond blanc + texte bleu roi */
+#header > nav ul li a.active {
+  background: #ffffff !important;
+  color: #2A4FA8 !important;
+}
