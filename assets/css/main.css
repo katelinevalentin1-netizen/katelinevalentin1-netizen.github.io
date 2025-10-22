@@ -3449,3 +3449,80 @@ input[type="button"]:disabled,
     padding: 0;
   }
 }
+/* =======================================================
+   🌿 Thème personnalisé Kateline Valentin
+   ======================================================= */
+
+:root {
+  --color-bg: #f6ede4;
+  --color-accent: #2e5247;
+  --color-text: #1c2833;
+}
+
+body {
+  background: var(--color-bg) url("../images/bg-van-gogh.jpg") center/cover fixed no-repeat;
+  color: var(--color-text);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(246, 237, 228, 0.75);
+  backdrop-filter: blur(3px);
+  z-index: -1;
+}
+
+/* Titres et liens */
+h1, h2, h3, h4 {
+  color: var(--color-accent);
+}
+
+a {
+  color: var(--color-accent);
+  border: none;
+}
+
+a:hover {
+  color: #204138;
+}
+
+/* En-tête */
+#header {
+  background: rgba(46, 82, 71, 0.9);
+  color: #fff;
+}
+
+#header .image.avatar img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #f6ede4;
+}
+
+/* Boutons */
+.button.primary {
+  background: var(--color-accent);
+  color: #fff !important;
+  border: none;
+  border-radius: 32px;
+  padding: 0.9em 1.6em;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.button.primary:hover {
+  filter: brightness(0.95);
+  transform: scale(1.05);
+}
+
+/* Pied de page */
+#footer {
+  background: rgba(30, 50, 46, 0.9);
+  color: #f6ede4;
+}
+
+#footer a {
+  color: #f6ede4;
+}
