@@ -3564,3 +3564,73 @@ h2, h3, h4 {
   background: #ffffff !important;
   color: #2A4FA8 !important;
 }
+
+/* ====== Overrides finaux : bleu roi & vert sapin ====== */
+
+/* Liens (hover) : le thème met du marron avec !important */
+a:hover{
+  color:#1E3A8A !important;           /* bleu roi + sombre */
+  border-bottom-color:transparent !important;
+}
+
+/* Titres dans header.major : le thème force marron */
+header.major h2{ color:#2A4FA8 !important; }  /* bleu roi */
+
+/* Boutons .primary : le thème met marron + autres couleurs */
+.button.primary,
+input[type="submit"].primary{
+  background-color:#2A4FA8 !important;
+  color:#fff !important;
+  border:none;
+  border-radius:32px;
+  padding:.8em 1.4em;
+  font-weight:600;
+}
+.button.primary:hover,
+input[type="submit"].primary:hover{
+  background-color:#1E3A8A !important;
+  transform:scale(1.05);
+}
+.button.primary:active,
+input[type="submit"].primary:active{
+  background-color:#1E3A8A !important;
+}
+
+/* Focus des champs : border marron par défaut */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus{
+  border-color:#2A4FA8 !important;    /* bleu roi */
+}
+
+/* Pastille des icônes des réalisations (remplace le marron) */
+ul.feature-icons li:before{
+  background:#87CEFA !important;      /* bleu ciel sur fond blanc */
+  color:#fff !important;
+}
+
+/* Icônes sur fond vert (header/footer) -> blanches */
+#header ul.icons li a,
+#footer ul.icons li a{ color:#fff !important; }
+
+/* Lignes du menu latéral sur vert -> blanches */
+#header > nav ul li{
+  border-top:1px solid rgba(255,255,255,.6) !important;
+}
+
+/* Lien actif du menu : fond blanc + bleu roi */
+#header > nav ul li a.active{
+  background:#fff !important;
+  color:#2A4FA8 !important;
+}
+
+/* Bouton burger du petit menu (barre noire) : éviter le marron */
+#titleBar .toggle:before{
+  background:#2A4FA8 !important;
+  color:#fff !important;
+}
+
+/* Optionnel : couleur du petit texte dans l’entête latéral */
+#header > header p{ color:#EAF0FF !important; }
