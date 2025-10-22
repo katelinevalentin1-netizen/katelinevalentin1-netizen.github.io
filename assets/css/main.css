@@ -3526,3 +3526,6 @@ a:hover {
 #footer a {
   color: #f6ede4;
 }
+header.major h2 {
+  color: var(--color-accent);
+}
