@@ -6,36 +6,54 @@
     <title>Kateline Valentin — Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="description" content="Portfolio de Kateline Valentin — maîtrise en relations internationales à l’Université Laval (Canada)." />
-    <link rel="stylesheet" href="assets/css/main.css?v=9" />
+    <link rel="stylesheet" href="assets/css/main.css?v=13" />
 
 ```
 <style>
-  /* === Thème clair (par défaut) ============================== */
+  /* ========================
+     🎨 Palette 3 + 3 + hover
+     ======================== */
   :root {
-    --bg: #ffffff;
-    --bg-alt: #f8fafc;
-    --nav-bg: #1e3a8a;
-    --accent: #2563eb;
-    --button: #3b82f6;
-    --text: #333333;
+    /* --- Thème clair --- */
+    --bg: #ffffff;        /* fond principal */
+    --nav-bg: #183153;    /* bleu nuit doux */
+    --accent: #2563eb;    /* bleu franc (liens) */
+    --button: #3b82f6;    /* bleu clair (CTA) */
+    --hover: #5f9eff;     /* 💡 bleu plus doux au survol */
+    --text: #333333;      /* texte gris foncé */
     --border: #d1d5db;
-    --text-inverse: #ffffff;
   }
 
+  :root[data-theme="dark"] {
+    /* --- Thème nuit --- */
+    --bg: #0b2545;
+    --nav-bg: #0a192f;
+    --accent: #7ab3e5;    /* bleu glacier (liens) */
+    --button: #5ea4ff;    /* bleu lumineux (CTA) */
+    --hover: #9bcdf7;     /* 💡 bleu pâle au survol */
+    --text: #f0f4ff;
+    --border: #2c3e50;
+  }
+
+  /* ========================
+     Styles principaux
+     ======================== */
   html, body {
     background-color: var(--bg);
     color: var(--text);
   }
 
   /* Header & nav */
-  #header, #nav { background-color: var(--nav-bg); color: var(--text-inverse); }
-  #header p { color: #e0e7ff; }
+  #header, #nav {
+    background-color: var(--nav-bg);
+    color: #ffffff;
+  }
   #nav a { color: #e0e7ff; }
-  #nav a:hover, #nav a.active { color: #ffffff; font-weight: bold; }
+  #nav a:hover, #nav a.active { color: var(--hover); font-weight: bold; }
 
   /* Liens & boutons */
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
+  a { color: var(--accent); text-decoration: none; transition: color .2s ease; }
+  a:hover { color: var(--hover); }
 
   .button.primary, a.button.primary {
     background-color: var(--button);
@@ -43,14 +61,14 @@
     border: none;
     border-radius: 6px;
     padding: 0.6em 1.2em;
+    transition: background-color .2s ease;
   }
-  .button.primary:hover { background-color: var(--accent); }
+  .button.primary:hover { background-color: var(--hover); }
 
   /* Sections */
   section { background-color: var(--bg); color: var(--text); }
-  section:nth-of-type(even) { background-color: var(--bg-alt); }
+  section:nth-of-type(even) { background-color: #f8fafc; }
 
-  p, li { color: var(--text); }
   h1, h2, h3, h4 { color: var(--nav-bg); }
 
   iframe.doc-embed {
@@ -58,124 +76,49 @@
     height: 600px;
     border: 1px solid var(--border);
     border-radius: 12px;
-    background: #ffffff;
   }
-
-  .image.avatar img { border: 3px solid var(--accent); }
 
   /* Footer */
-  #footer { background-color: var(--nav-bg); color: #e0e7ff; }
-  #footer a { color: #ffffff; }
-  #footer a:hover { text-decoration: underline; }
-
-  a:focus, .button:focus { outline: 2px dashed var(--accent); outline-offset: 3px; }
-
-  /* === Mode sombre automatique (si aucun choix utilisateur) === */
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) {
-      --bg: #0b2545;
-      --bg-alt: #142850;
-      --nav-bg: #1e3a8a;
-      --accent: #7ab3e5;
-      --button: #3b82f6;
-      --text: #f0f4ff;
-      --border: #2c3e50;
-      --text-inverse: #e0e7ff;
-    }
-
-    :root:not([data-theme]) h1,
-    :root:not([data-theme]) h2,
-    :root:not([data-theme]) h3,
-    :root:not([data-theme]) h4 { color: #7ab3e5; }
-
-    :root:not([data-theme]) .button.primary,
-    :root:not([data-theme]) a.button.primary {
-      background-color: var(--button);
-      color: #f0f4ff !important;
-    }
-
-    :root:not([data-theme]) iframe.doc-embed {
-      background: #142850;
-      border-color: #1e3a8a;
-    }
-
-    :root:not([data-theme]) #header,
-    :root:not([data-theme]) #nav { background-color: var(--bg-alt); }
+  #footer {
+    background-color: var(--nav-bg);
+    color: #e0e7ff;
   }
 
-  /* === Forçage manuel du thème via [data-theme="dark"/"light"] === */
-  :root[data-theme="dark"] {
-    --bg: #0b2545;
-    --bg-alt: #142850;
-    --nav-bg: #1e3a8a;
-    --accent: #7ab3e5;
-    --button: #3b82f6;
-    --text: #f0f4ff;
-    --border: #2c3e50;
-    --text-inverse: #e0e7ff;
-  }
-
-  :root[data-theme="dark"] h1,
-  :root[data-theme="dark"] h2,
-  :root[data-theme="dark"] h3,
-  :root[data-theme="dark"] h4 { color: #7ab3e5; }
-
-  :root[data-theme="dark"] .button.primary,
-  :root[data-theme="dark"] a.button.primary {
-    background-color: var(--button);
-    color: #f0f4ff !important;
-  }
-
-  :root[data-theme="dark"] iframe.doc-embed {
-    background: #142850;
-    border-color: #1e3a8a;
-  }
-
-  :root[data-theme="dark"] #header,
-  :root[data-theme="dark"] #nav { background-color: var(--bg-alt); }
-
-  /* === Bouton toggle thème ===================================== */
+  /* === Bouton toggle thème === */
   .theme-toggle {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    appearance: none;
     background: #ffffff22;
     border: 1px solid #ffffff55;
     color: #fff;
     padding: .45rem .7rem;
     border-radius: 999px;
     font-size: 0.95rem;
-    line-height: 1;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: .45rem;
-    transition: transform .1s ease, background .2s ease, border-color .2s ease;
+    transition: transform .1s ease;
   }
   .theme-toggle:hover { transform: translateY(-1px); }
-  .theme-toggle .icon { font-size: 1.05rem; }
-  :root:not([data-theme="dark"]) #header .theme-toggle { color: #fff; }
 
   .theme-badge {
     display: inline-block;
     min-width: .65rem;
     height: .65rem;
     border-radius: 50%;
-    background: #3b82f6;
-    box-shadow: 0 0 0 2px #ffffff33;
+    background: var(--button);
   }
-  :root[data-theme="dark"] .theme-badge { background: #7ab3e5; }
+  :root[data-theme="dark"] .theme-badge { background: var(--accent); }
 </style>
-
-<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 ```
 
   </head>
 
   <body class="is-preload">
     <section id="header">
-      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Basculer le thème clair/sombre" aria-pressed="false" title="Basculer clair/ sombre">
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Basculer le thème clair/sombre">
         <span class="icon" aria-hidden="true">☀️/🌙</span>
         <span class="theme-badge" aria-hidden="true"></span>
       </button>
@@ -202,164 +145,72 @@
       <li><a href="#five">Contact</a></li>
     </ul>
   </nav>
-
-  <footer>
-    <ul class="icons">
-      <li><a href="https://www.instagram.com/kate_3v/" class="icon brands fa-instagram"></a></li>
-      <li><a href="https://www.linkedin.com/in/kateline-valentin-873712259/" class="icon brands fa-linkedin"></a></li>
-      <li><a href="https://github.com/katelinevalentin1-netizen/katelinevalentin1-netizen.github.io" class="icon brands fa-github"></a></li>
-      <li><a href="mailto:katelinevalentin1@gmail.com" class="icon solid fa-envelope"></a></li>
-    </ul>
-  </footer>
 </section>
 
-<!-- Wrapper -->
 <div id="wrapper">
   <div id="main">
-    <!-- About -->
     <section id="one">
       <div class="image main" data-position="center">
         <img src="images/bg-van-gogh.jpg" alt="Fond Van Gogh" loading="lazy" />
       </div>
       <div class="container">
-        <header class="major">
-          <h2>🌍 Étudiante en maîtrise de relations internationales à l’Université Laval (Canada)</h2>
-          <p>Je m’intéresse aux enjeux de coopération culturelle, à la francophonie et aux
-            relations interculturelles France–Québec.</p>
-        </header>
+        <h2>🌍 Étudiante en maîtrise de relations internationales à l’Université Laval (Canada)</h2>
+        <p>Je m’intéresse aux enjeux de coopération culturelle, à la francophonie et aux relations interculturelles France–Québec.</p>
       </div>
     </section>
 
-    <!-- Réalisations -->
     <section id="two">
       <div class="container">
         <h3>Mes réalisations</h3>
         <ul class="feature-icons">
-          <li class="icon solid fa-star"><strong>Jury Coup de Cœur — SERIES MANIA 2025</strong><br />Sélection et analyse de 10 séries internationales.</li>
-          <li class="icon solid fa-handshake"><strong>Bénévole — Video Mapping Festival (2025)</strong><br />Médiation culturelle et coordination des groupes.</li>
-          <li class="icon solid fa-tv"><strong>Bénévole — Festival SERIES MANIA (2024)</strong><br />Accueil et médiation autour des créations de séries.</li>
-          <li class="icon solid fa-palette"><strong>Bénévole — Lille Art Up! (2023)</strong><br />Conception de parcours de médiation (+20 visites guidées).</li>
-          <li class="icon solid fa-music"><strong>Bénévole — CROSSROADS Festival (2022)</strong><br />Accueil artistes et coordination presse.</li>
+          <li class="icon solid fa-star"><strong>Jury Coup de Cœur — SERIES MANIA 2025</strong></li>
+          <li class="icon solid fa-handshake"><strong>Bénévole — Video Mapping Festival (2025)</strong></li>
+          <li class="icon solid fa-tv"><strong>Bénévole — Festival SERIES MANIA (2024)</strong></li>
         </ul>
       </div>
     </section>
 
-    <!-- CV -->
     <section id="three">
       <div class="container">
         <h3>Mon CV</h3>
-        <iframe src="CV_Canadien.pdf" class="doc-embed" title="CV de Kateline Valentin"></iframe>
-        <p style="text-align:center; margin-top:1em;">
-          <a href="CV_Canadien.pdf" class="button primary" target="_blank">Télécharger le CV (PDF)</a>
-        </p>
+        <iframe src="CV_Canadien.pdf" class="doc-embed"></iframe>
       </div>
     </section>
 
-    <!-- Projets -->
-    <section id="projets">
-      <div class="container">
-        <h3>Mes projets</h3>
-        <article>
-          <h4>🎥 Projet de recherche — Cinéma & dynamiques culturelles</h4>
-          <p><strong>Problématique :</strong> Comment le cinéma contribue-t-il à l’évolution culturelle, sociale et économique ?</p>
-          <iframe src="projet.pdf" class="doc-embed" title="Projet de recherche de Kateline Valentin"></iframe>
-          <p style="text-align:center; margin-top:1em;">
-            <a href="projet.pdf" class="button primary" target="_blank">Lire le projet complet</a>
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Formation -->
-    <section id="four">
-      <div class="container">
-        <h3>Formation</h3>
-        <article>
-          <h4>Université Laval — Maîtrise en relations internationales</h4>
-          <p>Québec, Canada · 2025 – 2027</p>
-          <p>Diplomatie, sécurité, commerce et coopération culturelle francophone.</p>
-        </article>
-
-        <article>
-          <h4>ICART Lille — Bachelor en management culturel</h4>
-          <p>France · 2022 – 2025</p>
-          <p>Projets culturels, médiation et communication dans les secteurs artistiques et audiovisuels.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- Contact -->
     <section id="five">
       <div class="container">
-        <h3>Me joindre</h3>
-        <p>Tu peux me contacter directement :</p>
-        <p style="text-align:center;">
-          <a href="mailto:katelinevalentin1@gmail.com" class="button primary">katelinevalentin1@gmail.com</a>
-        </p>
+        <h3>Contact</h3>
+        <a href="mailto:katelinevalentin1@gmail.com" class="button primary">katelinevalentin1@gmail.com</a>
       </div>
     </section>
   </div>
 
-  <!-- Footer -->
   <section id="footer">
     <div class="container">
       <ul class="copyright">
         <li>© Kateline Valentin, 2025</li>
-        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        <li>Design: <a href="http://html5up.net" rel="noopener">HTML5 UP</a></li>
       </ul>
     </div>
   </section>
 </div>
 
-<!-- Scripts de base -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-
-<!-- === Script: Toggle clair/sombre avec persistance ========== -->
+<!-- Script toggle clair/sombre -->
 <script>
   (function () {
     const root = document.documentElement;
-    const btn  = document.getElementById('themeToggle');
-    const KEY  = 'kv_theme';
+    const btn = document.getElementById('themeToggle');
+    const KEY = 'kv_theme';
 
     const saved = localStorage.getItem(KEY);
-    if (saved === 'light' || saved === 'dark') {
-      root.setAttribute('data-theme', saved);
-      btn.setAttribute('aria-pressed', saved === 'dark' ? 'true' : 'false');
-    } else {
-      root.removeAttribute('data-theme');
-      btn.setAttribute('aria-pressed', 'false');
-    }
+    if (saved) root.setAttribute('data-theme', saved);
 
-    btn.addEventListener('click', function () {
-      const current = root.getAttribute('data-theme');
-      let next;
-      if (!current) {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        next = prefersDark ? 'light' : 'dark';
-      } else {
-        next = current === 'dark' ? 'light' : 'dark';
-      }
+    btn.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme') || 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', next);
       localStorage.setItem(KEY, next);
-      btn.setAttribute('aria-pressed', next === 'dark' ? 'true' : 'false');
     });
-
-    if (window.matchMedia) {
-      const mq = window.matchMedia('(prefers-color-scheme: dark)');
-      mq.addEventListener('change', () => {
-        const hasChoice = !!localStorage.getItem(KEY);
-        if (!hasChoice) {
-          root.removeAttribute('data-theme');
-          btn.setAttribute('aria-pressed', 'false');
-        }
-      });
-    }
   })();
 </script>
 ```
