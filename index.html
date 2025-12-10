@@ -6,7 +6,7 @@
     <title>Kateline Valentin — Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="description" content="Portfolio de Kateline Valentin — maîtrise en relations internationales à l’Université Laval (Canada)." />
-    <link rel="stylesheet" href="assets/css/main.css?v=8" />
+    <link rel="stylesheet" href="assets/css/main.css?v=9" />
 
 ```
 <style>
@@ -70,30 +70,28 @@
 
   a:focus, .button:focus { outline: 2px dashed var(--accent); outline-offset: 3px; }
 
-  /* === Mode sombre automatique (si aucun choix utilisateur) ===
-     S'applique UNIQUEMENT quand [data-theme] est vide.
-  */
+  /* === Mode sombre automatique (si aucun choix utilisateur) === */
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme]) {
       --bg: #0b2545;
       --bg-alt: #142850;
       --nav-bg: #1e3a8a;
       --accent: #7ab3e5;
-      --button: #f5c242;
-      --text: #f0e6d6;
+      --button: #3b82f6;
+      --text: #f0f4ff;
       --border: #2c3e50;
-      --text-inverse: #f0f4ff;
+      --text-inverse: #e0e7ff;
     }
 
-    :root:not([data-theme]) h1, 
-    :root:not([data-theme]) h2, 
-    :root:not([data-theme]) h3, 
-    :root:not([data-theme]) h4 { color: #f5c242; }
+    :root:not([data-theme]) h1,
+    :root:not([data-theme]) h2,
+    :root:not([data-theme]) h3,
+    :root:not([data-theme]) h4 { color: #7ab3e5; }
 
     :root:not([data-theme]) .button.primary,
     :root:not([data-theme]) a.button.primary {
       background-color: var(--button);
-      color: #0b2545 !important;
+      color: #f0f4ff !important;
     }
 
     :root:not([data-theme]) iframe.doc-embed {
@@ -101,7 +99,7 @@
       border-color: #1e3a8a;
     }
 
-    :root:not([data-theme]) #header, 
+    :root:not([data-theme]) #header,
     :root:not([data-theme]) #nav { background-color: var(--bg-alt); }
   }
 
@@ -111,24 +109,28 @@
     --bg-alt: #142850;
     --nav-bg: #1e3a8a;
     --accent: #7ab3e5;
-    --button: #f5c242;
-    --text: #f0e6d6;
+    --button: #3b82f6;
+    --text: #f0f4ff;
     --border: #2c3e50;
-    --text-inverse: #f0f4ff;
+    --text-inverse: #e0e7ff;
   }
+
   :root[data-theme="dark"] h1,
   :root[data-theme="dark"] h2,
   :root[data-theme="dark"] h3,
-  :root[data-theme="dark"] h4 { color: #f5c242; }
+  :root[data-theme="dark"] h4 { color: #7ab3e5; }
+
   :root[data-theme="dark"] .button.primary,
   :root[data-theme="dark"] a.button.primary {
     background-color: var(--button);
-    color: #0b2545 !important;
+    color: #f0f4ff !important;
   }
+
   :root[data-theme="dark"] iframe.doc-embed {
     background: #142850;
     border-color: #1e3a8a;
   }
+
   :root[data-theme="dark"] #header,
   :root[data-theme="dark"] #nav { background-color: var(--bg-alt); }
 
@@ -153,20 +155,17 @@
   }
   .theme-toggle:hover { transform: translateY(-1px); }
   .theme-toggle .icon { font-size: 1.05rem; }
-  /* Version claire dans le header sombre = déjà lisible.
-     Quand header passe clair (si tu le fais évoluer), on ajuste: */
   :root:not([data-theme="dark"]) #header .theme-toggle { color: #fff; }
 
-  /* Petite pastille d’état */
   .theme-badge {
     display: inline-block;
     min-width: .65rem;
     height: .65rem;
     border-radius: 50%;
-    background: #ffe08a;
+    background: #3b82f6;
     box-shadow: 0 0 0 2px #ffffff33;
   }
-  :root[data-theme="dark"] .theme-badge { background: #60a5fa; }
+  :root[data-theme="dark"] .theme-badge { background: #7ab3e5; }
 </style>
 
 <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -175,15 +174,8 @@
   </head>
 
   <body class="is-preload">
-    <!-- Header -->
     <section id="header">
-      <!-- Bouton de bascule thème -->
-      <button id="themeToggle"
-              class="theme-toggle"
-              type="button"
-              aria-label="Basculer le thème clair/sombre"
-              aria-pressed="false"
-              title="Basculer clair/ sombre">
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Basculer le thème clair/sombre" aria-pressed="false" title="Basculer clair/ sombre">
         <span class="icon" aria-hidden="true">☀️/🌙</span>
         <span class="theme-badge" aria-hidden="true"></span>
       </button>
@@ -213,10 +205,10 @@
 
   <footer>
     <ul class="icons">
-      <li><a href="https://www.instagram.com/kate_3v/" class="icon brands fa-instagram" aria-label="Instagram"></a></li>
-      <li><a href="https://www.linkedin.com/in/kateline-valentin-873712259/" class="icon brands fa-linkedin" aria-label="LinkedIn"></a></li>
-      <li><a href="https://github.com/katelinevalentin1-netizen/katelinevalentin1-netizen.github.io" class="icon brands fa-github" aria-label="GitHub"></a></li>
-      <li><a href="mailto:katelinevalentin1@gmail.com" class="icon solid fa-envelope" aria-label="Email"></a></li>
+      <li><a href="https://www.instagram.com/kate_3v/" class="icon brands fa-instagram"></a></li>
+      <li><a href="https://www.linkedin.com/in/kateline-valentin-873712259/" class="icon brands fa-linkedin"></a></li>
+      <li><a href="https://github.com/katelinevalentin1-netizen/katelinevalentin1-netizen.github.io" class="icon brands fa-github"></a></li>
+      <li><a href="mailto:katelinevalentin1@gmail.com" class="icon solid fa-envelope"></a></li>
     </ul>
   </footer>
 </section>
@@ -331,46 +323,39 @@
 <!-- === Script: Toggle clair/sombre avec persistance ========== -->
 <script>
   (function () {
-    const root = document.documentElement;       // <html>
+    const root = document.documentElement;
     const btn  = document.getElementById('themeToggle');
-    const KEY  = 'kv_theme';                     // clé localStorage
+    const KEY  = 'kv_theme';
 
-    // 1) Lire la préférence sauvegardée
     const saved = localStorage.getItem(KEY);
     if (saved === 'light' || saved === 'dark') {
       root.setAttribute('data-theme', saved);
       btn.setAttribute('aria-pressed', saved === 'dark' ? 'true' : 'false');
     } else {
-      // Pas de choix utilisateur -> laisser vide pour activer le "auto"
       root.removeAttribute('data-theme');
       btn.setAttribute('aria-pressed', 'false');
     }
 
-    // 2) Toggle au clic
     btn.addEventListener('click', function () {
-      const current = root.getAttribute('data-theme'); // "", "light" ou "dark"
+      const current = root.getAttribute('data-theme');
       let next;
-
       if (!current) {
-        // On était en mode auto -> choisir l'opposé de la préférence système
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         next = prefersDark ? 'light' : 'dark';
       } else {
         next = current === 'dark' ? 'light' : 'dark';
       }
-
       root.setAttribute('data-theme', next);
       localStorage.setItem(KEY, next);
       btn.setAttribute('aria-pressed', next === 'dark' ? 'true' : 'false');
     });
 
-    // 3) (Optionnel) Réagir aux changements système SI l'utilisateur n'a pas choisi
     if (window.matchMedia) {
       const mq = window.matchMedia('(prefers-color-scheme: dark)');
-      mq.addEventListener && mq.addEventListener('change', (e) => {
+      mq.addEventListener('change', () => {
         const hasChoice = !!localStorage.getItem(KEY);
         if (!hasChoice) {
-          root.removeAttribute('data-theme'); // revenir à l'auto
+          root.removeAttribute('data-theme');
           btn.setAttribute('aria-pressed', 'false');
         }
       });
