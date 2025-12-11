@@ -32,4 +32,223 @@
       .button.primary{background:var(--button);color:#fff!important;border:none;border-radius:6px;padding:.6em 1.2em;transition:.2s;}
       .button.primary:hover{background:var(--hover);}
       section{background:var(--bg);color:var(--text);}
-      section:nth-of-type(even
+      section:nth-of-type(even){background:var(--bg-alt);}
+      p,li{color:var(--text);}h1,h2,h3,h4{color:var(--accent);}
+      iframe.doc-embed{width:100%;height:600px;border:1px solid var(--border);border-radius:12px;background:#fff;}
+      .image.avatar img{border:3px solid var(--accent);border-radius:50%;}
+      #footer{background:var(--nav-bg);color:#d9dce6;}#footer a{color:#fff;}#footer a:hover{text-decoration:underline;}
+      .theme-toggle{position:absolute;top:1rem;right:1rem;background:#ffffff22;border:1px solid #ffffff55;color:#fff;padding:.45rem .7rem;border-radius:999px;font-size:.95rem;cursor:pointer;display:inline-flex;align-items:center;gap:.45rem;}
+      .theme-badge{display:inline-block;min-width:.65rem;height:.65rem;border-radius:50%;background:var(--button);}
+      :root[data-theme="dark"] .theme-badge{background:var(--accent);}
+      .theme-toggle:hover{transform:translateY(-1px);}
+
+      /* ===== Bannières et images ===== */
+      .image-banner,
+      .image.main{width:100%;overflow:hidden;position:relative;margin:0 0 1.5rem 0;z-index:0;}
+      .image-banner img,
+      .image.main img{display:block;width:100%;height:auto;object-fit:cover;object-position:center;}
+      .image.main:before{content:none!important;}
+      .image.main,.image.main:before{position:static!important;inset:auto!important;}
+      section .container,section .major{position:static!important;z-index:auto!important;}
+      @media(max-width:640px){.image.main img,.image-banner img{max-height:420px;}}
+
+      /* ---- Séparation nette image -> texte (section #one) ---- */
+      #one .image-banner {
+        display: block;
+        position: relative;
+        z-index: 0;
+        margin: 0;
+      }
+      #one .image-banner img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+      }
+      #one .image-banner + .container {
+        margin-top: 3rem !important;
+        background: var(--bg);
+        position: relative;
+        z-index: 1;
+      }
+      #one .major {margin: 0 !important;padding-top: .25rem;}
+      #one .image-banner:before {content: none !important;}
+      @media (max-width: 640px) {
+        #one .image-banner + .container {margin-top: 3.25rem !important;}
+      }
+
+      /* --- Icônes sociales uniquement --- */
+      #header footer ul.icons {
+        display:flex;
+        justify-content:center;
+        gap:1.2rem;
+        margin-top:1rem;
+      }
+      #header footer ul.icons li a {
+        font-size:1.3rem;
+        color:#fff;
+        transition:color .2s ease;
+      }
+      #header footer ul.icons li a:hover {
+        color:var(--hover);
+      }
+    </style>
+  </head>
+
+  <body class="is-preload">
+    <!-- Header -->
+    <section id="header">
+      <button id="themeToggle" class="theme-toggle" type="button">☀️/🌙 <span class="theme-badge"></span></button>
+
+      <header>
+        <span class="image avatar">
+          <img src="/images/portrait-kateline.jpg?v=1" alt="Photo de Kateline Valentin" loading="lazy" />
+        </span>
+        <h1 id="logo"><a href="#">Kateline Valentin</a></h1>
+        <p>🎬 Passionnée par l’art et la diplomatie culturelle, j’explore la manière dont les échanges artistiques contribuent à la compréhension mutuelle entre les peuples.</p>
+      </header>
+
+      <nav id="nav">
+        <ul>
+          <li><a href="#one" class="active">À propos</a></li>
+          <li><a href="#two">Mes réalisations</a></li>
+          <li><a href="#three">Mon CV</a></li>
+          <li><a href="#projets">Mes projets</a></li>
+          <li><a href="#four">Formation</a></li>
+          <li><a href="#five">Contact</a></li>
+        </ul>
+      </nav>
+
+      <footer>
+        <ul class="icons">
+          <li><a href="https://www.instagram.com/kate_3v/" class="icon brands fa-instagram" target="_blank" aria-label="Instagram"></a></li>
+          <li><a href="https://www.linkedin.com/in/kateline-valentin-873712259/" class="icon brands fa-linkedin" target="_blank" aria-label="LinkedIn"></a></li>
+          <li><a href="https://github.com/katelinevalentin1-netizen/katelinevalentin1-netizen.github.io" class="icon brands fa-github" target="_blank" aria-label="GitHub"></a></li>
+          <li><a href="mailto:katelinevalentin1@gmail.com" class="icon solid fa-envelope" aria-label="Email"></a></li>
+        </ul>
+      </footer>
+    </section>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <div id="main">
+        <!-- 1. À propos -->
+        <section id="one">
+          <div class="image-banner">
+            <img src="/images/bg-van-gogh.jpg?v=1" alt="Fond Van Gogh" loading="lazy" />
+          </div>
+          <div class="container">
+            <header class="major">
+              <h2>🌍 Étudiante en maîtrise de relations internationales à l’Université Laval (Canada)</h2>
+              <p>Je m’intéresse aux enjeux de coopération culturelle, à la francophonie et aux relations interculturelles France–Québec.</p>
+            </header>
+          </div>
+        </section>
+
+        <!-- 2. Réalisations -->
+        <section id="two">
+          <div class="container">
+            <h3>Mes réalisations</h3>
+            <ul class="feature-icons">
+              <li class="icon solid fa-star"><strong>Jury Coup de Cœur — SERIES MANIA (2025)</strong><br/>Sélection et délibération autour de 10 séries internationales.</li>
+              <li class="icon solid fa-handshake"><strong>Bénévole — Video Mapping Festival (2025)</strong><br/>Médiation culturelle à l’Opéra et au Lycée Fénelon.</li>
+              <li class="icon solid fa-tv"><strong>Bénévole — SERIES MANIA (2024)</strong><br/>Accueil et médiation au Tripostal.</li>
+              <li class="icon solid fa-palette"><strong>Bénévole — Lille Art Up! (2023)</strong><br/>Parcours de médiation, 20+ visites guidées.</li>
+              <li class="icon solid fa-music"><strong>Bénévole — CROSSROADS Festival (2022)</strong><br/>Accueil et coordination presse.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 3. CV -->
+        <section id="three">
+          <div class="container">
+            <h3>Mon CV</h3>
+            <iframe src="/CV_Canadien.pdf?v=1" class="doc-embed"></iframe>
+            <p style="text-align:center;margin-top:1em;">
+              <a href="/CV_Canadien.pdf?v=1" class="button primary" target="_blank">Télécharger le CV (PDF)</a>
+            </p>
+          </div>
+        </section>
+
+        <!-- 4. Projet -->
+        <section id="projets">
+          <div class="container">
+            <h3>Mes projets</h3>
+            <article>
+              <h4>🎥 Projet de recherche — Cinéma & dynamiques culturelles</h4>
+              <p><strong>Problématique :</strong> Comment le cinéma contribue-t-il à l’évolution culturelle, sociale et économique ?</p>
+              <iframe src="/projet.pdf?v=1" class="doc-embed"></iframe>
+              <p style="text-align:center;margin-top:1em;">
+                <a href="/projet.pdf?v=1" class="button primary" target="_blank">Lire le projet (PDF)</a>
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 5. Formation -->
+        <section id="four">
+          <div class="container">
+            <h3>Formation</h3>
+            <article>
+              <h4>Université Laval — Maîtrise en relations internationales</h4>
+              <p>Québec (2025 – 2027)</p>
+              <p>Diplomatie, sécurité, commerce, développement, avec un focus sur la coopération culturelle francophone.</p>
+            </article>
+            <article>
+              <h4>ICART Lille — Bachelor en management culturel</h4>
+              <p>France (2022 – 2025)</p>
+              <p>Gestion de projets culturels, médiation et communication dans le cinéma, la musique et l’art contemporain.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- 6. Contact -->
+        <section id="five">
+          <div class="container">
+            <h3>Me joindre</h3>
+            <p>Tu peux me contacter directement :</p>
+            <p style="text-align:center;">
+              <a href="mailto:katelinevalentin1@gmail.com" class="button primary">katelinevalentin1@gmail.com</a>
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Footer -->
+      <section id="footer">
+        <div class="container">
+          <ul class="copyright">
+            <li>© Kateline Valentin, 2025</li>
+            <li>Design : <a href="http://html5up.net" rel="noopener">HTML5 UP</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/assets/js/jquery.min.js?v=1"></script>
+    <script src="/assets/js/jquery.scrollex.min.js?v=1"></script>
+    <script src="/assets/js/jquery.scrolly.min.js?v=1"></script>
+    <script src="/assets/js/browser.min.js?v=1"></script>
+    <script src="/assets/js/breakpoints.min.js?v=1"></script>
+    <script src="/assets/js/util.js?v=1"></script>
+    <script src="/assets/js/main.js?v=1"></script>
+
+    <!-- Toggle clair/sombre -->
+    <script>
+      (function(){
+        const root=document.documentElement,btn=document.getElementById("themeToggle"),KEY="kv_theme";
+        const saved=localStorage.getItem(KEY);
+        if(saved){root.setAttribute("data-theme",saved);btn.setAttribute("aria-pressed",saved==="dark");}
+        btn&&btn.addEventListener("click",()=>{
+          const cur=root.getAttribute("data-theme")||"light";
+          const next=cur==="dark"?"light":"dark";
+          root.setAttribute("data-theme",next);
+          localStorage.setItem(KEY,next);
+          btn.setAttribute("aria-pressed",next==="dark");
+        });
+      })();
+    </script>
+  </body>
+</html>
