@@ -117,7 +117,7 @@ franco-canadiennes, de visualiser clairement les tendances soutenant l’hypoth�
 Packages utilisés : tidyverse, lubridate, ggplot2, plotly, wordcloud
 Formats de sortie : graphiques exportés en .png ou .html pour insertion dans la page de projet.
 
-># 3.1 Blocs de code exécutables (reprenant fidèlement tes commandes)
+># 3.1 Blocs de code exécutables 
 
 ```{r import-et-clean}
 library(readr); library(dplyr); library(lubridate)
